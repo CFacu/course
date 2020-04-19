@@ -9,7 +9,7 @@ public class Runner {
 
 	public static void main(String[] args) {
 
-		MyList list = new MyList();
+		MyList<Integer> list = new MyList<Integer>();
 		list.addElementAt(1, 1);
 		list.addElementAt(2, 2);
 		list.addElementAt(3, 3);

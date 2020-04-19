@@ -1,1 +1,26 @@
-2020-04-17 08:18:54 INFO  FileReader:41 - {separate=4, told=3, existence=4, several=3, language=27, desirable=4, simple=9, that=3, myth=4, music=4, grammar=11, would=8, etc=4, occidental=9, members=4, than=6, only=4, english=6, friend=3, me=15, cambridge=3, if=14, new=7, pronunciation=8, individual=3, in=19, everyone=4, like=3, european=7, this=4, coalesce=3, pay=4, is=27, it=13, an=61, resulting=3, most=4, as=9, simplified=3, person=3, science=4, be=21, fact=3, achieve=4, for=8, their=16, why=4, seem=3, uniform=4, same=8, vocabulary=4, refuse=4, translators=4, common=15, are=4, and=14, of=13, have=4, europe=11, regular=6, occidental;=3, mine=3, a=237, languages=17, necessary=4, will=12, could=4, more=10, one=8, words=7, differ=4, expensive=4, the=47, existing=3, what=3, skeptical=3, realizes=4, uses=4, isthe=1, to=22, family=4, sport=4}
+2020-04-19 12:18:08 INFO  MyList:57 - Element 1 added at end of the list
+2020-04-19 12:18:08 INFO  MyList:57 - Element 2 added at end of the list
+2020-04-19 12:18:08 INFO  MyList:57 - Element 3 added at end of the list
+2020-04-19 12:18:08 INFO  MyList:57 - Element 9 added at end of the list
+2020-04-19 12:18:08 INFO  MyList:83 - Element 8 added at position 4
+2020-04-19 12:18:08 INFO  MyList:83 - Element 4 added at position 4
+2020-04-19 12:18:08 INFO  MyList:83 - Element 5 added at position 5
+2020-04-19 12:18:08 INFO  MyList:42 - Element 0 added at top of the list
+2020-04-19 12:18:08 INFO  MyList:83 - Element 6 added at position 6
+2020-04-19 12:18:08 INFO  MyList:83 - Element 7 added at position 8
+2020-04-19 12:18:08 INFO  MyList:57 - Element 99 added at end of the list
+2020-04-19 12:18:08 INFO  MyList:90 - Element 0
+2020-04-19 12:18:08 INFO  MyList:90 - Element 1
+2020-04-19 12:18:08 INFO  MyList:90 - Element 2
+2020-04-19 12:18:08 INFO  MyList:90 - Element 3
+2020-04-19 12:18:08 INFO  MyList:90 - Element 4
+2020-04-19 12:18:08 INFO  MyList:90 - Element 6
+2020-04-19 12:18:08 INFO  MyList:90 - Element 5
+2020-04-19 12:18:08 INFO  MyList:90 - Element 7
+2020-04-19 12:18:08 INFO  MyList:90 - Element 8
+2020-04-19 12:18:08 INFO  MyList:90 - Element 9
+2020-04-19 12:18:08 INFO  MyList:90 - Element 99
+2020-04-19 12:18:08 INFO  Runner:25 - false
+2020-04-19 12:18:08 ERROR MyList:125 - Position 83 out of range.
+2020-04-19 12:18:08 INFO  MyList:140 - Element at position 9 removed
+2020-04-19 12:18:08 INFO  MyList:121 - Element at position 9: 99

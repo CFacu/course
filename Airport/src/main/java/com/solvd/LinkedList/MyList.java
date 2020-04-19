@@ -3,12 +3,12 @@ package com.solvd.LinkedList;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class MyList {
+public class MyList<T> {
 	
 	private final static Logger LOGGER = LogManager.getLogger(MyList.class);
 
-	private Node first;
-	private Node last;
+	private Node<T> first;
+	private Node<T> last;
 	private Integer size;
 	
 	public MyList() {
@@ -27,14 +27,14 @@ public class MyList {
 		return false;
 	}
 	
-	public void addFirst(Integer element) {
-		Node n;
+	public void addFirst(T element) {
+		Node<T> n;
 		if (!this.isEmpty()) {
-			n = new Node(null, this.first, element);
+			n = new Node<T>(null, this.first, element);
 			this.first.setPrevious(n);
 		}
 		else {
-			n = new Node(null, null, element);
+			n = new Node<T>(null, null, element);
 			this.last= n;
 		}
 		this.first = n;
@@ -42,14 +42,14 @@ public class MyList {
 		LOGGER.info("Element " + n.getElement() + " added at top of the list");
 	};
 	
-	public void addLast(Integer element) {
-		Node n;
+	public void addLast(T element) {
+		Node<T> n;
 		if (!this.isEmpty()) {
-			n = new Node(this.last, null, element);
+			n = new Node<T>(this.last, null, element);
 			this.last.setNext(n);
 		}
 		else {
-			n = new Node(null, null, element);
+			n = new Node<T>(null, null, element);
 			this.first = n;
 		}
 		this.last = n;
@@ -58,8 +58,8 @@ public class MyList {
 
 	};
 	
-	public void addElementAt(Integer element, Integer pos){
-		Node n = new Node(null, null, element);
+	public void addElementAt(T element, Integer pos){
+		Node<T> n = new Node<T>(null, null, element);
 		if (pos == this.size + 1) {
 			addLast(element);
 		}
@@ -69,7 +69,7 @@ public class MyList {
 			}
 			else
 				if (pos <= this.size) {
-					Node temp = this.first;
+					Node<T> temp = this.first;
 					Integer count = 1;
 					while (count < pos) {
 						temp =  temp.getNext();
@@ -85,7 +85,7 @@ public class MyList {
 		};
 			
 	public void iterateForward() {
-		Node temp = this.first;
+		Node<T> temp = this.first;
 		while (temp != null) {
 			LOGGER.info("Element " + temp.getElement());
 			temp =  temp.getNext();
@@ -93,7 +93,7 @@ public class MyList {
 	};
 	
 	public void iterateBackward() {
-		Node temp = this.last;
+		Node<T> temp = this.last;
 		while (temp != null) {
 			LOGGER.info("Element " + temp.getElement());
 			temp = temp.getPrevious();
@@ -101,7 +101,7 @@ public class MyList {
 	};
 	
 	public boolean contains(Integer element) {
-		Node temp = this.first;
+		Node<T> temp = this.first;
 		while (temp != null) {
 			if (temp.element == element)
 				return true;
@@ -110,10 +110,10 @@ public class MyList {
 		return false;
 	}
 	
-	public Integer get(Integer position) {
+	public T get(Integer position) {
 		if (position <= this.size) {			
 			Integer counter = 0;
-			Node temp = this.first;
+			Node<T> temp = this.first;
 			while (counter < position) {
 				temp =  temp.getNext();
 				counter ++;
@@ -123,14 +123,14 @@ public class MyList {
 		}
 		else {
 			LOGGER.error("Position "+ position +" out of range.");
-			return position;
+			return null;
 		}
 	}
 	
 	public void remove(Integer position) {
 		if (position <= this.size) {			
 			Integer counter = 0;
-			Node temp = this.first;
+			Node<T> temp = this.first;
 			while (counter < position) {
 				temp =  temp.getNext();
 				counter ++;
@@ -143,11 +143,11 @@ public class MyList {
 			LOGGER.error("Position "+ position +" out of range.");
 	}
 	
-	public Node getFirst() {
+	public Node<T> getFirst() {
 		return first;
 	}
 
-	public Node getLast() {
+	public Node<T> getLast() {
 		return last;
 	}
 

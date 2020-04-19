@@ -1,37 +1,37 @@
 package com.solvd.LinkedList;
 
-public class Node{
-	Node previous;
-	Node next;
-	Integer element;
+public class Node<T>{
+	Node<T> previous;
+	Node<T> next;
+	T element;
 	
-	public Node(Node previous, Node next, Integer element) {
+	public Node(Node<T> previous, Node<T> next, T element) {
 		this.previous = previous;
 		this.next = next;
 		this.element = element;
 	}
 
-	public Node getPrevious() {
+	public Node<T> getPrevious() {
 		return previous;
 	}
 
-	public void setPrevious(Node previous) {
-		this.previous = previous;
+	public void setPrevious(Node<T> node) {
+		this.previous = node;
 	}
 
-	public Node getNext() {
+	public Node<T> getNext() {
 		return next;
 	}
 
-	public void setNext(Node next) {
+	public void setNext(Node<T> next) {
 		this.next = next;
 	}
 
-	public Integer getElement() {
+	public T getElement() {
 		return element;
 	}
 
-	public void setElement(Integer element) {
+	public void setElement(T element) {
 		this.element = element;
 	}
 }
