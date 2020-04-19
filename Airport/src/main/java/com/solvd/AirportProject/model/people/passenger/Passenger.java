@@ -1,19 +1,17 @@
-package com.solvd.AirportProject.model.flights.passenger;
+package com.solvd.AirportProject.model.people.passenger;
 
-import com.solvd.AirportProject.model.people.Customer;
+import com.solvd.AirportProject.model.people.User;
 
-public abstract class Passenger {
+public abstract class Passenger extends User {
 	
-	private Customer customer;
 	private String seatNumber;
 	protected Float ticketPrice;
 	
 	public Passenger() {
 	}
 	
-	public Passenger(Customer customer, String seatNumber, Float ticketPrice) {
+	public Passenger(String seatNumber, Float ticketPrice) {
 		super();
-		this.customer = customer;
 		this.seatNumber = seatNumber;
 		this.ticketPrice = ticketPrice;
 	}
@@ -22,14 +20,6 @@ public abstract class Passenger {
 	
 	public void setTicketPrice(Float ticketPrice) {
 		this.ticketPrice = ticketPrice;
-	}
-
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
 	}
 
 	public String getSeatNumber() {
@@ -44,5 +34,4 @@ public abstract class Passenger {
 		return ticketPrice;
 	}
 
-	
 }

@@ -1,8 +1,6 @@
-package com.solvd.AirportProject.model.flights.passenger;
+package com.solvd.AirportProject.model.people.passenger;
 
 import java.util.ArrayList;
-
-import com.solvd.AirportProject.model.people.Customer;
 
 public class FistClassPassenger extends Passenger{
 
@@ -20,8 +18,8 @@ public class FistClassPassenger extends Passenger{
 	}
 
 
-	public FistClassPassenger(Customer customer, String seatNumber, Float ticketPrice, ArrayList<String> requirements) {
-		super(customer, seatNumber, ticketPrice);
+	public FistClassPassenger(String seatNumber, Float ticketPrice, ArrayList<String> requirements) {
+		super(seatNumber, ticketPrice);
 		this.requirements = requirements;
 	}
 

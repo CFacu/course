@@ -1,6 +1,4 @@
-package com.solvd.AirportProject.model.flights.passenger;
-
-import com.solvd.AirportProject.model.people.Customer;
+package com.solvd.AirportProject.model.people.passenger;
 
 public class TouristClassPassenger extends Passenger {
 
@@ -10,8 +8,8 @@ public class TouristClassPassenger extends Passenger {
 	public TouristClassPassenger() {
 	}
 
-	public TouristClassPassenger(Customer customer, String seatNumber, Float ticketPrice) {
-		super(customer, seatNumber, ticketPrice);
+	public TouristClassPassenger(String seatNumber, Float ticketPrice) {
+		super(seatNumber, ticketPrice);
 	}
 
 	@Override

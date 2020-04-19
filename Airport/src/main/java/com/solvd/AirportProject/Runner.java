@@ -14,10 +14,10 @@ import com.solvd.AirportProject.model.exceptions.FlightCapacityException;
 import com.solvd.AirportProject.model.exceptions.FlightException;
 import com.solvd.AirportProject.model.exceptions.PilotException;
 import com.solvd.AirportProject.model.flights.PassengerFlight;
-import com.solvd.AirportProject.model.flights.passenger.BusinessClassPassenger;
-import com.solvd.AirportProject.model.flights.passenger.Passenger;
-import com.solvd.AirportProject.model.flights.passenger.TouristClassPassenger;
 import com.solvd.AirportProject.model.people.employee.Pilot;
+import com.solvd.AirportProject.model.people.passenger.BusinessClassPassenger;
+import com.solvd.AirportProject.model.people.passenger.Passenger;
+import com.solvd.AirportProject.model.people.passenger.TouristClassPassenger;
 
 public class Runner {
 	
@@ -81,7 +81,7 @@ public class Runner {
 		
 		Passenger passengerBC = new BusinessClassPassenger();
 		Passenger passengerTC = new TouristClassPassenger();
-
+		passengerBC.setPassport(12334567);
 		ArrayList<Passenger> pass = new ArrayList<Passenger>();
 		pass.add(passengerBC);
 		pass.add(passengerTC);

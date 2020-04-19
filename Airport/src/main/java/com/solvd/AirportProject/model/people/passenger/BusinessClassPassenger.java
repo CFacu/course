@@ -1,6 +1,4 @@
-package com.solvd.AirportProject.model.flights.passenger;
-
-import com.solvd.AirportProject.model.people.Customer;
+package com.solvd.AirportProject.model.people.passenger;
 
 public class BusinessClassPassenger extends Passenger {
 
@@ -10,8 +8,8 @@ public class BusinessClassPassenger extends Passenger {
 	public BusinessClassPassenger() {
 	}
 
-	public BusinessClassPassenger(Customer customer, String seatNumber, Float ticketPrice, String company, Float discount) {
-		super(customer, seatNumber, ticketPrice);
+	public BusinessClassPassenger(String seatNumber, Float ticketPrice, String company, Float discount) {
+		super(seatNumber, ticketPrice);
 		this.companyName = company;
 		this.discount = discount;
 	}

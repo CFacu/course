@@ -7,9 +7,9 @@ import com.solvd.AirportProject.model.Airplane;
 import com.solvd.AirportProject.model.Airport;
 import com.solvd.AirportProject.model.enums.FlightStatus;
 import com.solvd.AirportProject.model.exceptions.FlightCapacityException;
-import com.solvd.AirportProject.model.flights.passenger.Passenger;
 import com.solvd.AirportProject.model.people.employee.FlightAttendant;
 import com.solvd.AirportProject.model.people.employee.Pilot;
+import com.solvd.AirportProject.model.people.passenger.Passenger;
 
 public class PassengerFlight extends Flight {
 
@@ -36,11 +36,7 @@ public class PassengerFlight extends Flight {
 	}
 
 	public void leavePassengers(List<Passenger> passengers) {
-		for (Passenger passenger : passengers) {
-			this.passengers.remove(passenger);
-			LOGGER.info("Passenger " + passenger.getCustomer().getPassport() + " got off the plane.");
-
-		}
+		passengers.forEach((passenger)-> {LOGGER.info("Passenger " + passenger.getPassport() + " got off the plane"); this.passengers.remove(passenger);});
 	}
 	
 	public void setPassengers(List<Passenger> passengers) throws FlightCapacityException{
@@ -50,7 +46,7 @@ public class PassengerFlight extends Flight {
 			}
 			else {
 			this.passengers.add(passenger);
-			//LOGGER.info("Passenger " + passenger.getCustomer().getPassport() + " got on the plane");
+			LOGGER.info("Passenger " + passenger.getPassport() + " got on the plane");
 			}
 		}
 	}
