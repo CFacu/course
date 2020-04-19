@@ -1,3 +1,5 @@
+package com.solvd.Person;
+
 public class Person {
 
 	private String name;
