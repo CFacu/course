@@ -1,6 +1,6 @@
-package com.solvd.AirportProject.model.people.employee;
+package com.solvd.airportProject.model.people.employee;
 
-import com.solvd.AirportProject.model.people.User;
+import com.solvd.airportProject.model.people.User;
 
 public abstract class Staff extends User{
 

@@ -1,4 +1,4 @@
-package com.solvd.LinkedList;
+package com.solvd.linkedList;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

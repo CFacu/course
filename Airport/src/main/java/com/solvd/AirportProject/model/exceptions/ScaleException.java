@@ -1,4 +1,4 @@
-package com.solvd.AirportProject.model.exceptions;
+package com.solvd.airportProject.model.exceptions;
 
 public class ScaleException extends Exception {
 

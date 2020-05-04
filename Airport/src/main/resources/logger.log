@@ -1,0 +1,10 @@
+2020-05-04 20:10:06 INFO  Airport:74 - Airline A added to Airport Jorge Newbery Airpark
+2020-05-04 20:10:06 INFO  Airport:74 - Airline B added to Airport Jorge Newbery Airpark
+2020-05-04 20:10:06 INFO  Airport:74 - Airline C added to Airport Jorge Newbery Airpark
+2020-05-04 20:10:06 ERROR Runner:62 - com.solvd.airportProject.model.exceptions.AirlineException: The Airport Jorge Newbery Airpark already works with Airline A
+2020-05-04 20:10:06 INFO  Airline:60 - Flight 123 added to Airline A
+2020-05-04 20:10:06 ERROR Runner:77 - com.solvd.airportProject.model.exceptions.FlightException: The Airline A has already booked this flight.
+2020-05-04 20:10:06 ERROR Runner:85 - com.solvd.airportProject.model.exceptions.PilotException: The pilot does not work with this flight's airline.
+2020-05-04 20:10:06 WARN  Runner:105 - Flight cancelled number 123
+2020-05-04 20:10:06 INFO  Flight:62 - Passenger 98745633 got on the plane
+2020-05-04 20:10:06 ERROR Runner:113 - com.solvd.airportProject.model.exceptions.PilotException: The pilot does not work with this flight's airline.

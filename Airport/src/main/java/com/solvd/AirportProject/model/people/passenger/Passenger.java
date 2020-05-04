@@ -1,36 +1,22 @@
-package com.solvd.AirportProject.model.people.passenger;
+package com.solvd.airportProject.model.people.passenger;
 
-import com.solvd.AirportProject.model.people.User;
+import com.solvd.airportProject.model.people.User;
 
 public abstract class Passenger extends User {
 	
-	private String seatNumber;
-	protected Float ticketPrice;
+	protected String seatNumber;
+	protected Integer ticketPrice;
 	
 	public Passenger() {
 	}
-	
-	public Passenger(String seatNumber, Float ticketPrice) {
-		super();
-		this.seatNumber = seatNumber;
-		this.ticketPrice = ticketPrice;
-	}
 
 	public abstract void calculateTicketPrice();
-	
-	public void setTicketPrice(Float ticketPrice) {
-		this.ticketPrice = ticketPrice;
-	}
 
 	public String getSeatNumber() {
 		return seatNumber;
 	}
 
-	public void setSeatNumber(String seatNumber) {
-		this.seatNumber = seatNumber;
-	}
-
-	public Float getTicketPrice() {
+	public Integer getTicketPrice() {
 		return ticketPrice;
 	}
 

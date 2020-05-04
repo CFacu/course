@@ -1,9 +1,9 @@
-package com.solvd.AirportProject.model.flights;
+package com.solvd.airportProject.model.flights;
 
-import com.solvd.AirportProject.model.Airplane;
-import com.solvd.AirportProject.model.Airport;
-import com.solvd.AirportProject.model.enums.FlightStatus;
-import com.solvd.AirportProject.model.people.employee.Pilot;
+import com.solvd.airportProject.model.Airplane;
+import com.solvd.airportProject.model.Airport;
+import com.solvd.airportProject.model.enums.FlightStatus;
+import com.solvd.airportProject.model.people.employee.Pilot;
 
 public class CargoFlight extends Flight{
 	

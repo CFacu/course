@@ -1,4 +1,4 @@
-package com.solvd.AirportProject.model.enums;
+package com.solvd.airportProject.model.enums;
 
 public enum FlightStatus {
 	ACTIVE("Active Flight"),

@@ -1,4 +1,4 @@
-package com.solvd.AirportProject.model.people;
+package com.solvd.airportProject.model.people;
 
 public abstract class User {
 

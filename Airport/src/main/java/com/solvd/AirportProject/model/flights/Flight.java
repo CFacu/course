@@ -1,13 +1,14 @@
-package com.solvd.AirportProject.model.flights;
+package com.solvd.airportProject.model.flights;
 
-import org.apache.logging.log4j.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import com.solvd.AirportProject.model.Airline;
-import com.solvd.AirportProject.model.Airplane;
-import com.solvd.AirportProject.model.Airport;
-import com.solvd.AirportProject.model.enums.FlightStatus;
-import com.solvd.AirportProject.model.exceptions.PilotException;
-import com.solvd.AirportProject.model.people.employee.Pilot;
+import com.solvd.airportProject.model.Airline;
+import com.solvd.airportProject.model.Airplane;
+import com.solvd.airportProject.model.Airport;
+import com.solvd.airportProject.model.enums.FlightStatus;
+import com.solvd.airportProject.model.exceptions.PilotException;
+import com.solvd.airportProject.model.people.employee.Pilot;
 
 public abstract class Flight implements IFly{
 

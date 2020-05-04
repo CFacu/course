@@ -1,4 +1,4 @@
-package com.solvd.AirportProject.model;
+package com.solvd.airportProject.model;
 
 public class Airplane {
 

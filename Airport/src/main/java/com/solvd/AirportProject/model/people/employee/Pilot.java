@@ -1,4 +1,4 @@
-package com.solvd.AirportProject.model.people.employee;
+package com.solvd.airportProject.model.people.employee;
 
 public class Pilot extends Staff{
 

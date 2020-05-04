@@ -1,4 +1,4 @@
-package com.solvd.LinkedList;
+package com.solvd.linkedList;
 
 public class Node<T>{
 	Node<T> previous;

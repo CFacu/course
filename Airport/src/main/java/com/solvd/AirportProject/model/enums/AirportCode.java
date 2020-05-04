@@ -1,4 +1,4 @@
-package com.solvd.AirportProject.model.enums;
+package com.solvd.airportProject.model.enums;
 
 public enum AirportCode {
 	AEP("Jorge Newbery Airpark", "Argentina", "Buenos Aires"),

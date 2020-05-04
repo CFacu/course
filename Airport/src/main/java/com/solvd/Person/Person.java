@@ -1,4 +1,4 @@
-package com.solvd.Person;
+package com.solvd.person;
 
 public class Person {
 

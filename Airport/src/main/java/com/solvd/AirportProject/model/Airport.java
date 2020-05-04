@@ -1,12 +1,13 @@
-package com.solvd.AirportProject.model;
+package com.solvd.airportProject.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.logging.log4j.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import com.solvd.AirportProject.model.enums.AirportCode;
-import com.solvd.AirportProject.model.exceptions.AirlineException;
+import com.solvd.airportProject.model.enums.AirportCode;
+import com.solvd.airportProject.model.exceptions.AirlineException;
 
 public class Airport {
 	
@@ -65,7 +66,7 @@ public class Airport {
 	}
 	
 	public void addAirline(Airline airline) throws AirlineException {
-		if (this.getAirlines().contains(airline)){
+		if(airlines.stream().anyMatch(a -> a.equals(airline))) {
 			throw new AirlineException("The Airport "+ this.name +" already works with Airline " + airline.getName());
 		}
 		else {			

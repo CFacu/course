@@ -1,15 +1,15 @@
-package com.solvd.AirportProject.model.flights;
+package com.solvd.airportProject.model.flights;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.solvd.AirportProject.model.Airplane;
-import com.solvd.AirportProject.model.Airport;
-import com.solvd.AirportProject.model.enums.FlightStatus;
-import com.solvd.AirportProject.model.exceptions.FlightCapacityException;
-import com.solvd.AirportProject.model.people.employee.FlightAttendant;
-import com.solvd.AirportProject.model.people.employee.Pilot;
-import com.solvd.AirportProject.model.people.passenger.Passenger;
+import com.solvd.airportProject.model.Airplane;
+import com.solvd.airportProject.model.Airport;
+import com.solvd.airportProject.model.enums.FlightStatus;
+import com.solvd.airportProject.model.exceptions.FlightCapacityException;
+import com.solvd.airportProject.model.people.employee.FlightAttendant;
+import com.solvd.airportProject.model.people.employee.Pilot;
+import com.solvd.airportProject.model.people.passenger.Passenger;
 
 public class PassengerFlight extends Flight {
 
@@ -36,21 +36,38 @@ public class PassengerFlight extends Flight {
 	}
 
 	public void leavePassengers(List<Passenger> passengers) {
-		passengers.forEach((passenger)-> {LOGGER.info("Passenger " + passenger.getPassport() + " got off the plane"); this.passengers.remove(passenger);});
+		passengers.stream()
+		.forEach(passenger -> LOGGER.info("Passenger " + passenger.getPassport() + " got off the plane"));
+		this.passengers.removeAll(passengers);
 	}
 	
-	public void setPassengers(List<Passenger> passengers) throws FlightCapacityException{
-		for (Passenger passenger : passengers) {
-			if (this.plane.getCapacity() == this.passengers.size()) {
-				throw new FlightCapacityException("Cannot add passenger. The flight is full.");
-			}
-			else {
-			this.passengers.add(passenger);
-			LOGGER.info("Passenger " + passenger.getPassport() + " got on the plane");
-			}
-		}
+	public void setPassengers(List<Passenger> passengers) throws FlightCapacityException{	
+		passengers.stream()
+		.forEach(passenger -> {if (this.plane.getCapacity() == this.passengers.size())
+									try {
+										throw new FlightCapacityException("Cannot add passenger. The flight is full.");
+									} catch (FlightCapacityException e) {
+										LOGGER.error(e);
+									}
+								else {
+									this.passengers.add(passenger);
+									LOGGER.info("Passenger " + passenger.getPassport() + " got on the plane");
+								};
+							});
 	}
 
+	public void addPassenger(Passenger p) {
+		if (this.plane.getCapacity() > this.passengers.size()) {
+			this.passengers.add(p);
+			LOGGER.info("Passenger " + p.getPassport() + " got on the plane");
+		}
+		else
+			try {
+				throw new FlightCapacityException("Cannot add passenger. The flight is full.");
+			} catch (FlightCapacityException e) {
+				LOGGER.error(e);
+			}
+	}
 	public List<FlightAttendant> getFlightAttendants() {
 		return flightAttendants;
 	}
@@ -65,4 +82,5 @@ public class PassengerFlight extends Flight {
 			land(destination);
 			leavePassengers(passengers);
 		}
+
 }

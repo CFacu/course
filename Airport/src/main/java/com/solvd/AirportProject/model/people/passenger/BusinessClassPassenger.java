@@ -1,23 +1,23 @@
-package com.solvd.AirportProject.model.people.passenger;
+package com.solvd.airportProject.model.people.passenger;
 
 public class BusinessClassPassenger extends Passenger {
 
 	private String companyName;
-	private Float discount;
+	private Integer discount;
 
 	public BusinessClassPassenger() {
 	}
 
-	public BusinessClassPassenger(String seatNumber, Float ticketPrice, String company, Float discount) {
-		super(seatNumber, ticketPrice);
+	public BusinessClassPassenger(String seatNumber, Integer ticketPrice, String company, Integer discount) {
+		super();
 		this.companyName = company;
 		this.discount = discount;
+		calculateTicketPrice();
 	}
 
 	@Override
 	public void calculateTicketPrice() {
-		Float calc = this.ticketPrice * (1- discount);
-		this.setTicketPrice(calc);
+		this.ticketPrice = ticketPrice * (1 - discount);
 	}
 
 	public String getCompanyName() {
@@ -28,11 +28,11 @@ public class BusinessClassPassenger extends Passenger {
 		this.companyName = companyName;
 	}
 
-	public Float getDiscount() {
+	public Integer getDiscount() {
 		return discount;
 	}
 
-	public void setDiscount(Float discount) {
+	public void setDiscount(Integer discount) {
 		this.discount = discount;
 	}
 }

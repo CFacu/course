@@ -1,6 +1,6 @@
-package com.solvd.AirportProject.model.flights;
+package com.solvd.airportProject.model.flights;
 
-import com.solvd.AirportProject.model.Airport;
+import com.solvd.airportProject.model.Airport;
 
 public interface IFly {
 	

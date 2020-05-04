@@ -1,21 +1,21 @@
-package com.solvd.AirportProject.model.people.passenger;
+package com.solvd.airportProject.model.people.passenger;
 
 public class TouristClassPassenger extends Passenger {
 
 	private String travelCompany;
-	private Float tax;
+	private Integer tax;
 
 	public TouristClassPassenger() {
 	}
 
-	public TouristClassPassenger(String seatNumber, Float ticketPrice) {
-		super(seatNumber, ticketPrice);
+	public TouristClassPassenger(String seatNumber, Integer ticketPrice) {
+		super();
+		calculateTicketPrice();
 	}
 
 	@Override
 	public void calculateTicketPrice() {
-		Float calc = this.ticketPrice * (1 + tax);
-		this.setTicketPrice(calc);
+		this.ticketPrice = ticketPrice * (1 + tax);
 	}
 
 	public String getTravelCompany() {

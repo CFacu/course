@@ -1,4 +1,4 @@
-package com.solvd.File;
+package com.solvd.file;
 
 public class Runner {
 	

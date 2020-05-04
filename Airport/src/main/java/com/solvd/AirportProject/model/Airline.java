@@ -1,4 +1,4 @@
-package com.solvd.AirportProject.model;
+package com.solvd.airportProject.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,9 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.solvd.AirportProject.model.exceptions.FlightException;
-import com.solvd.AirportProject.model.flights.Flight;
-import com.solvd.AirportProject.model.people.employee.Staff;
+import com.solvd.airportProject.model.exceptions.FlightException;
+import com.solvd.airportProject.model.flights.Flight;
+import com.solvd.airportProject.model.people.employee.Staff;
 
 public class Airline {
 
@@ -53,9 +53,8 @@ public class Airline {
 	}
 	
 	public void addFlight(Flight flight) throws FlightException{
-		if (this.getFlights().contains(flight)){
+		if (flights.stream().anyMatch(f -> f.equals(flight)))
 			throw new FlightException("The Airline "+ this.name +" has already booked this flight.");
-		}
 		else {			
 			this.flights.add(flight);
 			LOGGER.info("Flight "+ flight.getFlightNumber() +" added to Airline "+ this.name);

@@ -1,23 +1,29 @@
-package com.solvd.AirportProject;
+package com.solvd.airportProject;
 
 import java.util.ArrayList;
+import java.util.Random;
 
-import org.apache.logging.log4j.*;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import com.solvd.AirportProject.model.Airline;
-import com.solvd.AirportProject.model.Airplane;
-import com.solvd.AirportProject.model.Airport;
-import com.solvd.AirportProject.model.enums.AirportCode;
-import com.solvd.AirportProject.model.enums.FlightStatus;
-import com.solvd.AirportProject.model.exceptions.AirlineException;
-import com.solvd.AirportProject.model.exceptions.FlightCapacityException;
-import com.solvd.AirportProject.model.exceptions.FlightException;
-import com.solvd.AirportProject.model.exceptions.PilotException;
-import com.solvd.AirportProject.model.flights.PassengerFlight;
-import com.solvd.AirportProject.model.people.employee.Pilot;
-import com.solvd.AirportProject.model.people.passenger.BusinessClassPassenger;
-import com.solvd.AirportProject.model.people.passenger.Passenger;
-import com.solvd.AirportProject.model.people.passenger.TouristClassPassenger;
+import com.solvd.airportProject.model.Airline;
+import com.solvd.airportProject.model.Airplane;
+import com.solvd.airportProject.model.Airport;
+import com.solvd.airportProject.model.enums.AirportCode;
+import com.solvd.airportProject.model.enums.FlightStatus;
+import com.solvd.airportProject.model.exceptions.AirlineException;
+import com.solvd.airportProject.model.exceptions.FlightCapacityException;
+import com.solvd.airportProject.model.exceptions.FlightException;
+import com.solvd.airportProject.model.exceptions.PilotException;
+import com.solvd.airportProject.model.flights.Flight;
+import com.solvd.airportProject.model.flights.PassengerFlight;
+import com.solvd.airportProject.model.people.employee.Pilot;
+import com.solvd.airportProject.model.people.passenger.BusinessClassPassenger;
+import com.solvd.airportProject.model.people.passenger.FirstClassPassenger;
+import com.solvd.airportProject.model.people.passenger.IBook;
+import com.solvd.airportProject.model.people.passenger.Passenger;
+import com.solvd.airportProject.model.people.passenger.TouristClassPassenger;
 
 public class Runner {
 	
@@ -81,18 +87,23 @@ public class Runner {
 		
 		Passenger passengerBC = new BusinessClassPassenger();
 		Passenger passengerTC = new TouristClassPassenger();
+		FirstClassPassenger passengerFC = new FirstClassPassenger();
+		passengerFC.calculateTicketPrice();
+		passengerFC.setPassport(98745633);
 		passengerBC.setPassport(12334567);
-		ArrayList<Passenger> pass = new ArrayList<Passenger>();
-		pass.add(passengerBC);
-		pass.add(passengerTC);
-		try {
-			flight.setPassengers(pass);
-		} catch (FlightCapacityException e) {
-			LOGGER.error(e);
-		}
-		
+	
 		flight.setStatus(FlightStatus.CANCELLED);
 		LOGGER.warn(flight.getStatus().toString() + " number " + flight.getFlightNumber());
+		
+		IBook<FirstClassPassenger, PassengerFlight> firstClassBook = (p, f) -> {f.addPassenger(passengerFC); p.setSeatNumber("first seats");};
+		firstClassBook.book(passengerFC, flight);
+		
+		IBook<Pilot, Flight> pilotBook = (p,f) -> {try {
+														f.setPilot(p);
+													} catch (PilotException e) {
+														LOGGER.error(e);;
+													} f.setStatus(FlightStatus.OPEN);};
+		pilotBook.book(pilot, flight);
 /**/
 	}
 }
